@@ -6,7 +6,7 @@ import furhatos.app.furhatlab.llm.ResponseGenerator
 import furhatos.flow.kotlin.*
 import furhatos.nlu.common.Goodbye
 
-val model = OpenAIChatCompletionModel(serviceKey = "OPENAI_API_KEY")
+val model = OpenAIChatCompletionModel(serviceKey = "MY_OPENAI_KEY")
 
 val responseGenerator = ResponseGenerator(
     systemPrompt = "You are a friendly and helpful social robot. Your name is Furhat. You give very brief answers.",
