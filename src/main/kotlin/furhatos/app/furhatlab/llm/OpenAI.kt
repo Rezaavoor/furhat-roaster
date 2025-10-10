@@ -80,7 +80,7 @@ suspend fun ChatCompletionModel.postOpenAIRequest(apiUrl: String, jsonRequest: J
 }
 
 class OpenAIChatCompletionModel(
-    val model: String = "gpt-4o-mini",
+    val model: String = "gpt-4.1-mini",
     serviceKey: String): ChatCompletionModel() {
 
     private val apiUrl = "https://api.openai.com/v1/chat/completions"
