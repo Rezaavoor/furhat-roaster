@@ -13,7 +13,7 @@ We strongly advise you to use a headset instead of your laptop's internal microp
 
 2. Use Git to clone this repo into a folder on your computer.
 
-3. Open the folder in IntelliJ. Follow [these instructions](https://docs.furhat.io/skills/#importing-the-skill-into-intellij-ide) if you encounter problems.
+3. Open the folder in IntelliJ. Follow [these instructions](https://docs.furhat.io/skill-development/skills#importing-the-skill-into-intellij-ide) if you encounter problems.
 
 ### Using the Furhat SDK web interface
 
@@ -50,9 +50,9 @@ At the end of the interaction, after reading back the order, define a new `Confi
 
 ### Adding gestures and varied utterances
 
-* Add suitable facial gestures for Furhat with `furhat.gesture()`, which you can [read about here](https://docs.furhat.io/gestures/#performing-gestures).
+* Add suitable facial gestures for Furhat with `furhat.gesture()`, which you can [read about here](https://docs.furhat.io/skill-development/reference/gestures#performing-gestures).
 
-* Through the [Utterance functionality](https://docs.furhat.io/speech/#utterances), you can insert gestures in the middle of utterances, and randomize what Furhat says to make it more varied. You
+* Through the [Utterance functionality](https://docs.furhat.io/skill-development/reference/speech#utterances), you can insert gestures in the middle of utterances, and randomize what Furhat says to make it more varied. You
 
 ### Handle other user behaviours 
 
