@@ -6,8 +6,7 @@ import furhatos.app.furhatlab.llm.ResponseGenerator
 import furhatos.flow.kotlin.*
 import furhatos.nlu.common.Goodbye
 
-val apiKey: String = System.getenv("OPENAI_API_KEY")
-    ?: error("Missing OPENAI_API_KEY")
+val apiKey = ""
 
 val model = OpenAIChatCompletionModel(serviceKey = apiKey)
 

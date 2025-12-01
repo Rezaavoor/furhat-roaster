@@ -16,7 +16,8 @@ val Init: State = state {
         when {
             users.hasAny() -> {
                 furhat.attend(users.random)
-                goto(StartInteraction)
+                furhat.say("yo yo")
+                goto(Idle)
             }
             else -> goto(Idle)
         }

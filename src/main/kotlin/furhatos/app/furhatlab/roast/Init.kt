@@ -1,9 +1,27 @@
 package furhatos.app.furhatlab.roast
 
+import furhatos.app.furhatlab.llm.OpenAIChatCompletionModel
+import furhatos.app.furhatlab.llm.ResponseGenerator
 import furhatos.flow.kotlin.State
 import furhatos.flow.kotlin.furhat
 import furhatos.flow.kotlin.state
 import furhatos.flow.kotlin.users
+
+
+val apiKey = ""
+
+object userInfo {
+    var name:String? = null
+    var age:String? = null
+    var study:String? = null
+    var job:String? = null
+    var interests:String? = null
+    var appearance:String? = null
+
+    override fun toString(): String {
+        return "userInfo(name=$name, age=$age, study=$study, job=$job, interests=$interests, appearance=$appearance)"
+    }
+}
 
 val InitRoast: State = state {
     onEntry {
