@@ -57,7 +57,7 @@ val GetToKnow: State = state {
             model = model
         )
 
-        val extraction = getToKnowAgent.generate(this)?.trim()
+        val extraction = getToKnowAgent.generate(this).trim()
 
         // Store extracted value safely
         when (counter) {
