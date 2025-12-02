@@ -10,7 +10,7 @@ val Transition: State = state {
         furhat.say(" Where do you see yourself in 10 years?")
         delay(5000)
         furhat.gesture(Gestures.GazeAway)
-        furhat.say("That's literally soo interesting...")
+        furhat.say("Wow, that's literally so interesting...")
         goto(Roast)
     }
 
