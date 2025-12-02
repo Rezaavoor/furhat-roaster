@@ -1,7 +1,5 @@
 package furhatos.app.furhatlab.roast
 
-import furhatos.app.furhatlab.flow.Idle
-import furhatos.app.furhatlab.flow.chat.ChatState
 import furhatos.flow.kotlin.State
 import furhatos.flow.kotlin.furhat
 import furhatos.flow.kotlin.state

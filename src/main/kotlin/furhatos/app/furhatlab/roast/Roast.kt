@@ -4,7 +4,6 @@ import furhatos.app.furhatlab.flow.Idle
 import furhatos.app.furhatlab.llm.OpenAIChatCompletionModel
 import furhatos.app.furhatlab.llm.ResponseGenerator
 import furhatos.flow.kotlin.*
-import kotlin.math.round
 
 val model = OpenAIChatCompletionModel(serviceKey = apiKey)
 
