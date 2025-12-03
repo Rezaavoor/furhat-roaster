@@ -107,7 +107,7 @@ val RoastCycleStart: State = state {
 
         val roastAgent = ResponseGenerator(systemPrompt = systemPrompt, model = model)
         val roast = roastAgent.generate(this)
-        furhat.say(roast)
+        SayWithExpression(roast)
 
         RoastStateData.round += 1
         goto(WaitForUserRoast)
@@ -163,7 +163,7 @@ val ReactToRoast: State = state {
 
         val reactAgent = ResponseGenerator(systemPrompt = reactionPrompt, model = model)
         val reaction = reactAgent.generate(this)
-        furhat.say(reaction)
+        SayWithExpression(reaction)
 
         RoastStateData.hurtLevel += 1
         delay(3000) // Window for user to apologize
