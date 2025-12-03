@@ -7,6 +7,7 @@ import furhatos.flow.kotlin.*
 
 val model = OpenAIChatCompletionModel(serviceKey = apiKey)
 
+
 // Tracks roast progression
 object RoastStateData {
     var round = 1
