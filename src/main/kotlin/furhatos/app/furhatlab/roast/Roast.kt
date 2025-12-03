@@ -166,6 +166,7 @@ val ReactToRoast: State = state {
         furhat.say(reaction)
 
         RoastStateData.hurtLevel += 1
+        delay(3000) // Window for user to apologize
         goto(RoastCycleStart)
     }
 }
