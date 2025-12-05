@@ -130,6 +130,7 @@ val WaitForUserRoast: State = state {
 
     onResponse {
         RoastStateData.lastUserRoast = it.text
+        // Add reaction
         goto(ReactToRoast)
     }
 

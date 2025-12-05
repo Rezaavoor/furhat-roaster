@@ -50,11 +50,11 @@ class CustomGestures {
 
 }
 
-
+/* Original Gesture class*/
 fun stringToGesture(name: String): Gesture? {
     return try {
         // Access property of Gestures by name
-        val property = CustomGestures::class.members.firstOrNull { it.name.equals(name, ignoreCase = true) }
+        val property = Gestures::class.members.firstOrNull { it.name.equals(name, ignoreCase = true) }
         property?.call(Gestures) as? Gesture
 
     } catch (e: Exception) {
@@ -62,6 +62,7 @@ fun stringToGesture(name: String): Gesture? {
     }
 }
 
+/* Using the Custom Gesture class*/
 fun stringToCustomGesture(name: String): Gesture? {
     return try {
         val customGestures = CustomGestures()
@@ -102,7 +103,6 @@ fun FlowControlRunner.SayWithExpression(input: String) {
             val gestureName = part.removeSurrounding("[", "]")
             val gesture = stringToGesture(gestureName)
             if (gesture != null){
-
                 furhat.gesture(gesture)
             }
         }
