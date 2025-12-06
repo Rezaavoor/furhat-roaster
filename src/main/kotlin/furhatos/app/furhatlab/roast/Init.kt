@@ -9,7 +9,7 @@ import furhatos.flow.kotlin.users
 
 
 val apiKey = ""
-
+val model = OpenAIChatCompletionModel(serviceKey = apiKey)
 object userInfo {
     var name:String? = null
     var age:String? = null
@@ -26,7 +26,7 @@ object userInfo {
 val InitRoast: State = state {
     onEntry {
         /** Set our default interaction parameters */
-        users.setSimpleEngagementPolicy(distance = 1.5, maxUsers = 2)
+        users.setSimpleEngagementPolicy(distance = 1.5, maxUsers = 1)
         // furhat.character = "Marty"
         // furhat.voice = ""
         when {

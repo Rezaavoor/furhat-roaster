@@ -1,17 +1,14 @@
 package furhatos.app.furhatlab.roast
 
 import furhatos.app.furhatlab.flow.Idle
-import furhatos.app.furhatlab.llm.OpenAIChatCompletionModel
 import furhatos.app.furhatlab.llm.ResponseGenerator
 import furhatos.flow.kotlin.*
-
-val model = OpenAIChatCompletionModel(serviceKey = apiKey)
 
 
 // Tracks roast progression
 object RoastStateData {
     var round = 1
-    var maxRounds = 5
+    var maxRounds = 6
     var hurtLevel = 0
     var lastUserRoast: String? = null
 }
@@ -21,7 +18,8 @@ val roastThemes = listOf(
     "They are ${userInfo.age} years old",
     "They study ${userInfo.study}",
     "They work as ${userInfo.job}",
-    "Their interests include ${userInfo.interests}"
+    "Their interests include ${userInfo.interests}",
+    "Their appearance description is ${userInfo.appearance}"
 )
 
 
@@ -34,7 +32,9 @@ val Roast: State = state {
                 "They are ${userInfo.age} years old",
                 "They study ${userInfo.study}",
                 "They work as ${userInfo.job}",
-                "Their interests include ${userInfo.interests}""")
+                "Their interests include ${userInfo.interests}
+                "Their appearance description is ${userInfo.appearance}
+                """)
         RoastStateData.round = 1
         RoastStateData.hurtLevel = 0
         goto(RoastCycleStart)
@@ -57,6 +57,7 @@ val RoastCycleStart: State = state {
             3 -> "study: ${userInfo.study}"
             4 -> "job: ${userInfo.job}"
             5 -> "interests: ${userInfo.interests}"
+            6 -> "appearance: ${userInfo.appearance}"
             else -> ""
         }
 
