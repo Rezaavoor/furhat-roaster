@@ -8,7 +8,7 @@ import furhatos.flow.kotlin.*
 // Tracks roast progression
 object RoastStateData {
     var round = 1
-    var maxRounds = 6
+    var maxRounds = if (userInfo.appearance == null) 5 else 6
     var hurtLevel = 0
     var lastUserRoast: String? = null
 }
