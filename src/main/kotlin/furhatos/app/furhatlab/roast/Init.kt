@@ -8,8 +8,11 @@ import furhatos.flow.kotlin.state
 import furhatos.flow.kotlin.users
 
 
-val apiKey = ""
+val apiKey: String = System.getenv("OPENAI_API_KEY")
+    ?: error("Missing OPENAI_API_KEY")
+
 val model = OpenAIChatCompletionModel(serviceKey = apiKey)
+
 object userInfo {
     var name:String? = null
     var age:String? = null
