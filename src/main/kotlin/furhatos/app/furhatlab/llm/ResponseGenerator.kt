@@ -1,40 +1,51 @@
 package furhatos.app.furhatlab.llm
 
-import furhatos.flow.kotlin.DialogHistory
 import furhatos.flow.kotlin.FlowControlRunner
-import furhatos.flow.kotlin.Furhat
 import kotlinx.coroutines.runBlocking
 
-class ResponseGenerator(val systemPrompt: String, val model: ChatCompletionModel) {
+/**
+ * A simple stateless response generator.
+ * It sends only the system prompt to the LLM, optionally with a user message.
+ * This prevents the model from drifting, adding emojis,
+ * or reacting to earlier exchanges.
+ */
+class ResponseGenerator(
+    private val systemPrompt: String,
+    private val model: ChatCompletionModel,
+    private val userMessage: String? = null
+) {
 
     fun generate(runner: FlowControlRunner): String {
         val response = runner.call {
             getChatCompletion()
         } as? String
-        return response?:"An error has occurred"
+        return response ?: "An error has occurred"
     }
 
-    fun getChatCompletion(): String? {
-        val contextWindowSize = 10
-        val messages = mutableListOf<Message>(SystemMessage(systemPrompt))
-        Furhat.dialogHistory.all.takeLast(contextWindowSize).forEach {
-            when (it) {
-                is DialogHistory.ResponseItem -> {
-                    messages.add(UserMessage(it.response.text))
-                }
-                is DialogHistory.UtteranceItem -> {
-                    messages.add(AssistantMessage(it.toText()))
-                }
-            }
+    /**
+     * Sends a prompt to the model:
+     * system: <systemPrompt>
+     * optionally user: <userMessage>
+     *
+     * No history, no assistant messages.
+     */
+    private fun getChatCompletion(): String? {
+        val messages = mutableListOf<Message>(
+            SystemMessage(systemPrompt)
+        )
+        
+        if (userMessage != null) {
+            messages.add(UserMessage(userMessage))
         }
-        try {
+
+        return try {
             val completion = runBlocking {
                 model.request(Prompt(messages))
             }
-            return completion.text
+            completion.text
         } catch (e: Exception) {
-            return null
+            println("Error getting LLM completion: ${e.message}")
+            null
         }
     }
-
 }

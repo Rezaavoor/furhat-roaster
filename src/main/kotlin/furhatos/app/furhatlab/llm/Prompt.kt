@@ -31,6 +31,29 @@ class Prompt {
             } else if (message is UserMessage) {
                 put("role", "user")
                 put("content", message.content)
+            } else if (message is VisionUserMessage) {
+                put("role", "user")
+                put("content", JSONArray().apply {
+                    // text part
+                    put(
+                        JSONObject().apply {
+                            put("type", "text")
+                            put("text", message.text)
+                        }
+                    )
+                    // image part
+                    put(
+                        JSONObject().apply {
+                            put("type", "image_url")
+                            put(
+                                "image_url",
+                                JSONObject().apply {
+                                    put("url", message.imageUrl)
+                                }
+                            )
+                        }
+                    )
+                })
             }
         }
     })
@@ -44,3 +67,8 @@ data class AssistantMessage(val content: String): Message
 data class UserMessage(val content: String): Message
 
 data class SystemMessage(val content: String): Message
+
+data class VisionUserMessage(
+    val text: String,
+    val imageUrl: String
+) : Message
