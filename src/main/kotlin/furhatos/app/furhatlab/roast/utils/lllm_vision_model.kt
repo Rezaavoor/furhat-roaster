@@ -18,8 +18,10 @@ import javax.imageio.ImageIO
 
 fun getUserAppearance(runner: FlowControlRunner, user: User){
     println("[USER_APPEARANCE] User appearance info update process started")
+    println("[USER_APPEARANCE] user: " + user)
     val snapshotInfo = user.getSnapShot()
     val bufferedImage = snapshotInfo?.first
+    println("[USER_APPEARANCE] snashotInfo: " + snapshotInfo)
     
     if (bufferedImage == null) {
         println("[USER_APPEARANCE] Couldn't capture image from camera. Using generic appearance description.")
