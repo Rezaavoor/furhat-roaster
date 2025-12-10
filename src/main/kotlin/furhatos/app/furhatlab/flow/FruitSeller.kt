@@ -1,7 +1,15 @@
 package furhatos.app.furhatlab.flow.fruitseller
 
 import furhatos.app.furhatlab.flow.Idle
+import furhatos.app.furhatlab.roast.AskWithExpression
+import furhatos.app.furhatlab.roast.CustomGestures
+import furhatos.app.furhatlab.roast.RoastStateData
+
 import furhatos.flow.kotlin.*
+import furhatos.gestures.ARKitParams
+import furhatos.gestures.CharParams
+import furhatos.gestures.Gesture
+import furhatos.gestures.defineGesture
 import furhatos.nlu.EnumEntity
 import furhatos.nlu.Intent
 import furhatos.nlu.common.No
@@ -13,6 +21,9 @@ import furhatos.util.Language
 /**
  * This is the top parent state which all other states inherit
  */
+
+val custom = CustomGestures()
+
 val Interaction: State = state {
 
     onUserLeave(instant = true) {
@@ -42,7 +53,7 @@ val FruitSellerGreeting: State = state(Interaction) {
 
     onEntry {
         furhat.say("Hi there!")
-        goto(TakingOrder)
+        furhat.gesture(custom.ReallySadReaction)
     }
 
     onUserEnter(instant = true) {

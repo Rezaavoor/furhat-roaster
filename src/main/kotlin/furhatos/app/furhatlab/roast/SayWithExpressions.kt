@@ -6,22 +6,11 @@ import furhatos.flow.kotlin.furhat
 import furhatos.gestures.Gestures
 import furhatos.gestures.Gesture
 import furhatos.gestures.ARKitParams // if we create our own gestures
+import furhatos.gestures.BasicParams
 import furhatos.gestures.CharParams
 import furhatos.gestures.defineGesture
 
 class CustomGestures {
-    val SadReaction = defineGesture("SadReaction") {
-        frame(0.32, 0.72) {
-            ARKitParams.BROW_INNER_UP to 1.0
-            ARKitParams.EYE_WIDE_LEFT to 1.0
-            ARKitParams.EYE_WIDE_RIGHT to 1.0
-            ARKitParams.MOUTH_FROWN_LEFT to 1.0
-            ARKitParams.MOUTH_FROWN_RIGHT to 1.0
-            ARKitParams.MOUTH_ROLL_LOWER to 0.5
-        }
-        reset(2.0)
-    }
-
     val Cheeky = defineGesture("Cheeky") {
         frame(0.32, 0.72) {
             ARKitParams.BROW_OUTER_UP_LEFT to 1.0
@@ -33,20 +22,113 @@ class CustomGestures {
             ARKitParams.BROW_INNER_UP to 0.2
         }
         frame(0.32, 0.6) {
-            ARKitParams.EYE_LOOK_OUT_LEFT to 1.0
-            ARKitParams.EYE_LOOK_IN_RIGHT to 1.0
+            ARKitParams.EYE_LOOK_OUT_LEFT to 0.6
+            ARKitParams.EYE_LOOK_IN_RIGHT to 0.6
         }
-        reset(2.0)
+        reset(15.0)
     }
 
-    val Test = defineGesture("Test") {
-        frame(0.32, 0.72) {
-            CharParams.LIP_BOTTOM_THINNER to 2.0
-        }
-        frame(0.72,1.0) {
-            CharParams.LIP_BOTTOM_THINNER to 1.0
+    // Hurtlevel 0
+    val EvenLessConcerned = defineGesture("Concerned") {
+        frame(0.6, persist = true) {
+            ARKitParams.BROW_INNER_UP to 0.8
+            ARKitParams.EYE_WIDE_LEFT to 0.3
+            ARKitParams.EYE_WIDE_RIGHT to 0.3
         }
     }
+
+    // Hurtlevel 1
+    val MildlyConcerned = defineGesture("Concerned") {
+        frame(0.6, persist = true) {
+            ARKitParams.BROW_INNER_UP to 0.8
+            ARKitParams.EYE_WIDE_LEFT to 0.3
+            ARKitParams.EYE_WIDE_RIGHT to 0.3
+            ARKitParams.MOUTH_FROWN_LEFT to 0.4
+            ARKitParams.MOUTH_FROWN_RIGHT to 0.4
+        }
+
+    }
+
+    // Hurtlevel 2
+    val Concerned2 = defineGesture("Concerned") {
+        frame(0.6, persist = true) {
+            ARKitParams.BROW_INNER_UP to 0.8
+            ARKitParams.EYE_WIDE_LEFT to 0.5
+            ARKitParams.EYE_WIDE_RIGHT to 0.5
+            ARKitParams.MOUTH_FROWN_LEFT to 0.6
+            ARKitParams.MOUTH_FROWN_RIGHT to 0.6
+            ARKitParams.MOUTH_ROLL_LOWER to 0.5
+        }
+    }
+
+    // Hurtlevel 3
+    val Concerned3 = defineGesture("Concerned") {
+        frame(0.6, persist = true) {
+            ARKitParams.BROW_INNER_UP to 1.0
+            ARKitParams.EYE_WIDE_LEFT to 0.7
+            ARKitParams.EYE_WIDE_RIGHT to 0.7
+            ARKitParams.MOUTH_FROWN_LEFT to 1.0
+            ARKitParams.MOUTH_FROWN_RIGHT to 1.0
+            ARKitParams.MOUTH_ROLL_LOWER to 0.5
+        }
+    }
+
+    // Hurtlevel 4
+    val ReallySadReaction = defineGesture("SadReaction") {
+        frame(0.6, persist = true) {
+            ARKitParams.BROW_INNER_UP to 1.0
+            ARKitParams.EYE_WIDE_LEFT to 1.0
+            ARKitParams.EYE_WIDE_RIGHT to 1.0
+            ARKitParams.MOUTH_FROWN_LEFT to 1.0
+            ARKitParams.MOUTH_FROWN_RIGHT to 1.0
+            ARKitParams.MOUTH_ROLL_LOWER to 0.8
+        }
+    }
+
+    // Less like a frown and more like a worried?
+    val Frown = defineGesture("Frown") {
+        frame(0.5, 0.8) {
+            ARKitParams.BROW_DOWN_RIGHT to 0.8
+            ARKitParams.BROW_DOWN_LEFT to 0.8
+            ARKitParams.EYE_SQUINT_LEFT to 0.3
+            ARKitParams.EYE_SQUINT_RIGHT to 0.3
+            ARKitParams.MOUTH_FROWN_LEFT to 0.3
+            ARKitParams.MOUTH_FROWN_RIGHT to 0.3
+        }
+        reset(4.0)
+
+    }
+
+    val Smile = defineGesture("Smile") {
+        frame(0.32, 0.72) {
+            ARKitParams.MOUTH_SMILE_LEFT to 1.0
+            ARKitParams.MOUTH_SMILE_RIGHT to 1.0
+            ARKitParams.EYE_SQUINT_LEFT to 0.3
+            ARKitParams.EYE_SQUINT_RIGHT to 0.3
+        }
+        reset(2.0)
+
+    }
+
+    val Nod = defineGesture("Nod") {
+        frame(0.32, 0.72) {
+            BasicParams.NECK_TILT to 1.0
+        }
+        reset(2.0)
+
+    }
+
+    val Roll = defineGesture("Roll") {
+        frame(0.32, 2.0) {
+            BasicParams.NECK_ROLL to 1.0
+        }
+        reset(2.0)
+
+    }
+
+
+
+    companion object
 
 }
 
@@ -73,6 +155,7 @@ fun stringToCustomGesture(name: String): Gesture? {
         null
     }
 }
+
 
 fun splitGesturesAndText(input: String): Sequence<String> {
     val regex = Regex("""\[\w+]""")
@@ -108,6 +191,22 @@ fun FlowControlRunner.SayWithExpression(input: String) {
         }
         else {
             furhat.say(part)
+        }
+    }
+}
+
+fun FlowControlRunner.AskWithExpression(input: String) {
+    for(part in splitGesturesAndText(input)){
+        println(part)
+        if (part.matches(Regex("\\[[^]]+]"))) {
+            val gestureName = part.removeSurrounding("[", "]")
+            val gesture = stringToGesture(gestureName)
+            if (gesture != null){
+                furhat.gesture(gesture, async = true)
+            }
+        }
+        else {
+            furhat.ask(part)
         }
     }
 }

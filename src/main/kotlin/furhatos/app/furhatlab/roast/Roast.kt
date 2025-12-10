@@ -3,7 +3,7 @@ package furhatos.app.furhatlab.roast
 import furhatos.app.furhatlab.flow.Idle
 import furhatos.app.furhatlab.llm.ResponseGenerator
 import furhatos.flow.kotlin.*
-
+val custom = CustomGestures()
 
 // Tracks roast progression
 object RoastStateData {
@@ -101,8 +101,7 @@ val RoastCycleStart: State = state {
             [Expression] text [Expression] text [Expression] text
             
             ALLOWED EXPRESSIONS ONLY:
-            BigSmile, Blink, BrowFrown, BrowRaise, CloseEyes, ExpressAnger, ExpressDisgust,
-            ExpressFear, ExpressSad, GazeAway, Nod, Oh, OpenEyes, Roll, Shake, Smile,
+            Blink, BrowFrown, BrowRaise, ExpressFear, GazeAway, Nod, Oh, OpenEyes, Roll, Shake, Smile,
             Surprise, Thoughtful, Wink
             
             CRITICAL RULES:
@@ -124,6 +123,7 @@ val RoastCycleStart: State = state {
         val roastAgent = ResponseGenerator(systemPrompt = systemPrompt, model = model)
         val roast = roastAgent.generate(this)
         SayWithExpression(roast)
+        //furhat.say(roast)
 
         RoastStateData.round += 1
         goto(WaitForUserRoast)
@@ -135,23 +135,23 @@ val RoastCycleStart: State = state {
     }
 }
 
-
 // 2. Wait for the user to roast Furhat
 val WaitForUserRoast: State = state {
     onEntry {
         delay(1000)
+        //AskWithExpression("Your turn. Give me your best shot. [Concerned]", RoastStateData.hurtLevel)
+
         furhat.ask("Your turn. Give me your best shot.")
+
     }
 
     onResponse {
         RoastStateData.lastUserRoast = it.text
-        // Add reaction
         goto(ReactToRoast)
     }
 
     onNoResponse {
-        RoastStateData.lastUserRoast = ""
-        goto(ReactToRoast)
+        furhat.ask("I didn't hear you. Roast me.")
     }
 }
 
@@ -180,8 +180,7 @@ val ReactToRoast: State = state {
             Example: [Wink] Nice one. [Smile] I'll remember that.
             
             ALLOWED EXPRESSIONS ONLY:
-            BigSmile, Blink, BrowFrown, BrowRaise, CloseEyes, ExpressAnger, ExpressDisgust,
-            ExpressFear, ExpressSad, GazeAway, Nod, Oh, OpenEyes, Roll, Shake, Smile,
+            Blink, BrowFrown, BrowRaise, ExpressFear, GazeAway, Nod, Oh, OpenEyes, Roll, Shake, Smile,
             Surprise, Thoughtful, Wink
             
             CRITICAL RULES:
@@ -199,10 +198,20 @@ val ReactToRoast: State = state {
 
         val reactAgent = ResponseGenerator(systemPrompt = reactionPrompt, model = model)
         val reaction = reactAgent.generate(this)
+
+        val expressionIntensity = when {
+            hurtLevel == 0 -> furhat.gesture(custom.EvenLessConcerned, async = true)
+            hurtLevel == 1 -> furhat.gesture(custom.MildlyConcerned, async = true)
+            hurtLevel == 2 -> furhat.gesture(custom.Concerned2, async = true)
+            hurtLevel == 3 -> furhat.gesture(custom.Concerned3, async = true)
+            else -> furhat.gesture(custom.ReallySadReaction, async = true)
+        }
+
         SayWithExpression(reaction)
+        //furhat.say(reaction)
 
         RoastStateData.hurtLevel += 1
-        delay(2000) // Brief pause before next round (window for user to apologize)
+        delay(RoastStateData.hurtLevel * 400L) // Brief pause before next round (window for user to apologize)
         goto(RoastCycleStart)
     }
 }
