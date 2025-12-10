@@ -101,7 +101,7 @@ val RoastCycleStart: State = state {
             [Expression] text [Expression] text [Expression] text
             
             ALLOWED EXPRESSIONS ONLY:
-            Blink, BrowFrown, BrowRaise, ExpressFear, GazeAway, Nod, Oh, OpenEyes, Roll, Shake, Smile,
+            Blink, BrowFrown, BrowRaise, GazeAway, Nod, Oh, OpenEyes, Roll, Shake,
             Surprise, Thoughtful, Wink
             
             CRITICAL RULES:
