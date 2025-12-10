@@ -3,6 +3,7 @@ package furhatos.app.furhatlab.roast
 import furhatos.app.furhatlab.llm.ResponseGenerator
 import furhatos.flow.kotlin.State
 import furhatos.flow.kotlin.furhat
+import furhatos.flow.kotlin.onNoResponse
 import furhatos.flow.kotlin.onResponse
 import furhatos.flow.kotlin.state
 
@@ -102,5 +103,9 @@ val GetToKnow: State = state {
 
         counter += 1
         reentry()
+    }
+
+    onNoResponse {
+        furhat.ask("I didn't hear you, come again")
     }
 }
