@@ -125,9 +125,6 @@ class CustomGestures {
         reset(2.0)
 
     }
-
-
-
     companion object
 
 }
@@ -156,12 +153,13 @@ fun stringToCustomGesture(name: String): Gesture? {
     }
 }
 
+val gestureRegex = Regex("""\[[^]]+]""") // Checks for []
 
 fun splitGesturesAndText(input: String): Sequence<String> {
-    val regex = Regex("""\[\w+]""")
+
     return sequence {
         var lastIndex = 0
-        for (match in regex.findAll(input)) {
+        for (match in gestureRegex.findAll(input)) {
             //Text between gestures (.say())
             if (match.range.first > lastIndex) {
                 val text = input.substring(lastIndex, match.range.first).trim()
@@ -182,7 +180,7 @@ fun splitGesturesAndText(input: String): Sequence<String> {
 fun FlowControlRunner.SayWithExpression(input: String) {
     for(part in splitGesturesAndText(input)){
         println(part)
-        if (part.matches(Regex("\\[[^]]+]"))) {
+        if (part.matches(gestureRegex)) {
             val gestureName = part.removeSurrounding("[", "]")
             val gesture = stringToGesture(gestureName)
             if (gesture != null){
@@ -198,7 +196,7 @@ fun FlowControlRunner.SayWithExpression(input: String) {
 fun FlowControlRunner.AskWithExpression(input: String) {
     for(part in splitGesturesAndText(input)){
         println(part)
-        if (part.matches(Regex("\\[[^]]+]"))) {
+        if (part.matches(gestureRegex)) {
             val gestureName = part.removeSurrounding("[", "]")
             val gesture = stringToGesture(gestureName)
             if (gesture != null){
