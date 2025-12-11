@@ -108,7 +108,7 @@ val RoastCycleStart: State = state {
             TARGET DETAIL: $userDetail
             
             FORMAT REQUIREMENT:
-            [Expression] text [Expression] text [Expression] text
+            Example: [Roll] Oh wow, you really got me, [Smile] I’ll have to think about that.
             
             ALLOWED EXPRESSIONS ONLY:
             Blink, BrowFrown, BrowRaise, GazeAway, Nod, Oh, OpenEyes, Roll, Shake,
@@ -123,6 +123,8 @@ val RoastCycleStart: State = state {
             • NEVER add meta-commentary outside brackets.
             • Keep each roast to 1-3 short sentences maximum.
             • Match intensity level exactly to the round number.
+            • Break the text into short, natural fragments separated by commas or full stops.
+            • Do not produce long, uninterrupted sentences; aim for 2–4 short clauses per response.
             
             CONTEXT (for reference only, never roast these):
             ${roastThemes.joinToString("\n")}
@@ -132,6 +134,7 @@ val RoastCycleStart: State = state {
 
         val roastAgent = ResponseGenerator(systemPrompt = systemPrompt, model = model)
         val roast = roastAgent.generate(this)
+        println(roast)
         SayWithExpression(roast)
         //furhat.say(roast)
 
@@ -148,11 +151,11 @@ val RoastCycleStart: State = state {
 // 2. Wait for the user to roast Furhat
 val WaitForUserRoast: State = state {
     onEntry {
-        delay(500)
+        delay(600)
         var round = RoastStateData.round
         val yourTurn = when {
             round == 2 -> "Okay, your turn, [Nod] give it to me funny guy!"
-            round == 3 -> "Let's hear it, smartass, [Blink] what do you got? "
+            round == 3 -> "Let's hear it smartass, [Blink] what do you got? "
             round == 4 -> "[Smile] OK, [GazeAway] roast away"
             else -> "[BrowRaise] Alright, you're up, [Blink] shoot. "
         }
@@ -165,7 +168,7 @@ val WaitForUserRoast: State = state {
     }
 
     onNoResponse {
-        furhat.ask("I didn't hear you. Roast me.")
+        furhat.ask("I didn't hear you. Roast me!")
     }
 }
 
@@ -211,7 +214,8 @@ val ReactToRoast: State = state {
             • NEVER use emojis or symbols.
             • NEVER add meta-commentary outside brackets.
             • Keep it short (1 sentence max).
-            • Include at least two punctuation marks such as commas or full stops within the sentence.
+            • Break the text into short, natural fragments separated by commas or full stops.
+            • Do not produce long, uninterrupted sentences; aim for 2–4 short clauses per response.
             
             TASK: React emotionally at the current hurt level with expressions in brackets.
         """.trimIndent()
