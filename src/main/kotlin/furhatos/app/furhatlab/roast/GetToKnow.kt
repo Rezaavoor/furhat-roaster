@@ -20,7 +20,7 @@ val ownAnswer = listOf(
     "",
     "Okay, I'm 47  but people usually think I'm 24.",
     "Alright, I used to study, but they kicked me out for using AI. But how could I not, I am AI. The system is rigged.",
-    "Okay, Right now I'm in-between jobs, but I have this great idea I've been working on. It is basically Uber but for vacuum cleaners.",
+    "Okay, Right now I'm in-between jobs, but I'm trying to make it as a Classically trained DJ.",
 )
 
 var counter = 0
