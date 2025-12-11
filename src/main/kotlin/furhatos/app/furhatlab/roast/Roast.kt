@@ -70,7 +70,7 @@ val Roast: State = state {
 val RoastCycleStart: State = state {
     onEntry {
         if (RoastStateData.round > RoastStateData.maxRounds) {
-            SayWithExpression("[Smile] I am done with you now. Goodbye.")
+            SayWithExpression("[CloseEyes] Please make it stop.")
             goto(Idle)
             return@onEntry
         }
