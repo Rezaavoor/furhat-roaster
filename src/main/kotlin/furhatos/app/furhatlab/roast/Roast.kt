@@ -172,6 +172,12 @@ val ReactToRoast: State = state {
             else -> "dramatically collapsing emotionally"
         }
 
+        //printing all states
+        println("""
+            EMOTIONAL STATE: $reactionIntensity
+            HURT LEVEL: $hurtLevel
+        """)
+
         val reactionPrompt = """
             You are Furhat, reacting emotionally to being roasted.
             

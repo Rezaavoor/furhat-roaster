@@ -57,6 +57,8 @@ val GetToKnow: State = state {
             Your task:
             Extract the most important information from the user's response.
             Keep relevant context and details that help understand their full answer.
+
+            NOTE: if the user's response is not relevant to the question, return "N/A".
             
             RULES:
             • Return a concise summary (1-2 sentences max)
@@ -66,7 +68,7 @@ val GetToKnow: State = state {
             • Keep the user's actual words when possible
             • Example: If asked "What's your job?" and user says "I'm between jobs but used to work as a carpenter", return "Between jobs, but used to work as a carpenter"
             
-            Return ONLY the extracted information, nothing else.
+            Return ONLY the extracted information or "N/A", nothing else.
         """.trimIndent()
 
         val getToKnowAgent = ResponseGenerator(
@@ -76,6 +78,13 @@ val GetToKnow: State = state {
         )
 
         val extraction = getToKnowAgent.generate(this).trim()
+
+        if (extraction == "N/A") {
+            furhat.say("I didn't really get that, come again")
+            furhat.ask(question)
+            reentry()
+            return@onResponse
+        }
 
         // Store extracted value safely
         when (counter) {
@@ -106,6 +115,7 @@ val GetToKnow: State = state {
     }
 
     onNoResponse {
-        furhat.ask("I didn't hear you, come again")
+        furhat.say("I didn't hear you, come again")
+        furhat.ask(userPrompts[counter])
     }
 }
