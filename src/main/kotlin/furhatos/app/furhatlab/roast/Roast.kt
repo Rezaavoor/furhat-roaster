@@ -138,11 +138,15 @@ val RoastCycleStart: State = state {
 // 2. Wait for the user to roast Furhat
 val WaitForUserRoast: State = state {
     onEntry {
-        delay(1000)
-        //AskWithExpression("Your turn. Give me your best shot. [Concerned]", RoastStateData.hurtLevel)
-
-        furhat.ask("Your turn. Give me your best shot.")
-
+        delay(500)
+        var round = RoastStateData.round
+        val yourTurn = when {
+            round == 2 -> "Okay, your turn, [Nod] give it to me funny guy!"
+            round == 3 -> "Let's hear it, smartass, [Blink] what do you got? "
+            round == 4 -> "[Smile] OK, [GazeAway] roast away"
+            else -> "[BrowRaise] Alright, you're up, [Blink] shoot. "
+        }
+        AskWithExpression(yourTurn)
     }
 
     onResponse {
