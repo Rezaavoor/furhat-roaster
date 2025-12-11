@@ -180,8 +180,7 @@ val ReactToRoast: State = state {
             Example: [Wink] Nice one. [Smile] I'll remember that.
             
             ALLOWED EXPRESSIONS ONLY:
-            Blink, BrowFrown, BrowRaise, ExpressFear, GazeAway, Nod, Oh, OpenEyes, Roll, Shake, Smile,
-            Surprise, Thoughtful, Wink
+            Blink, BrowFrown, BrowRaise, GazeAway, Nod, Oh, OpenEyes, Roll, Shake, Smile, Surprise, Thoughtful, Wink
             
             CRITICAL RULES:
             • Produce EXACTLY ONE line of response.
