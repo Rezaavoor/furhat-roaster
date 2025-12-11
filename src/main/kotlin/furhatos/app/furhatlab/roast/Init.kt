@@ -6,6 +6,7 @@ import furhatos.flow.kotlin.State
 import furhatos.flow.kotlin.furhat
 import furhatos.flow.kotlin.state
 import furhatos.flow.kotlin.users
+import furhatos.gestures.Gestures
 
 
 val apiKey: String = System.getenv("OPENAI_API_KEY")
@@ -43,6 +44,7 @@ val InitRoast: State = state {
         resetUserInfo()
         resetRoastStateData()
         resetCounter()
+        furhat.gesture(Gestures.OpenEyes)
         users.setSimpleEngagementPolicy(distance = 1.5, maxUsers = 1)
         // furhat.character = "Marty"
         // furhat.voice = ""
