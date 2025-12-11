@@ -1,11 +1,13 @@
 package furhatos.app.furhatlab.roast
 
 import furhatos.app.furhatlab.llm.ResponseGenerator
+import furhatos.app.furhatlab.roast.utils.getUserAppearance
 import furhatos.flow.kotlin.State
 import furhatos.flow.kotlin.furhat
 import furhatos.flow.kotlin.onNoResponse
 import furhatos.flow.kotlin.onResponse
 import furhatos.flow.kotlin.state
+import furhatos.flow.kotlin.users
 
 val userPrompts = listOf(
     "My name is Brozart. What is your name?",
@@ -113,6 +115,12 @@ val GetToKnow: State = state {
                 userInfo.interests = extraction
                 println("[EXTRACTION] Interests: $extraction")
             }
+        }
+
+        if (userInfo.appearance == null) {
+            println("Trying to get user appearance again")
+            getUserAppearance(this, users.current)
+            println("User appearance successfully got: ${userInfo.appearance}")
         }
 
         counter += 1
