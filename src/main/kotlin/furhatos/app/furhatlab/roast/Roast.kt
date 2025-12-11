@@ -1,6 +1,5 @@
 package furhatos.app.furhatlab.roast
 
-import furhatos.app.furhatlab.flow.Idle
 import furhatos.app.furhatlab.llm.ResponseGenerator
 import furhatos.flow.kotlin.*
 val custom = CustomGestures()
@@ -11,6 +10,15 @@ object RoastStateData {
     var maxRounds = if (userInfo.appearance == null) 5 else 6
     var hurtLevel = 0
     var lastUserRoast: String? = null
+}
+
+fun resetRoastStateData() {
+    RoastStateData.round = 1
+    RoastStateData.maxRounds = if (userInfo.appearance == null) 5 else 6
+    RoastStateData.hurtLevel = 0
+    RoastStateData.lastUserRoast = null
+
+    println("Roast state data reset")
 }
 
 val roastThemes = listOf(
@@ -71,7 +79,8 @@ val RoastCycleStart: State = state {
     onEntry {
         if (RoastStateData.round > RoastStateData.maxRounds) {
             SayWithExpression("[CloseEyes] Please make it stop.")
-            goto(Idle)
+            saveDialogHistory()
+            goto(IdleRoast)
             return@onEntry
         }
 
@@ -131,7 +140,7 @@ val RoastCycleStart: State = state {
 
     onUserLeave {
         furhat.say("It was nice talking to you")
-        goto(Idle)
+        goto(IdleRoast)
     }
 }
 

@@ -25,6 +25,11 @@ val ownAnswer = listOf(
 
 var counter = 0
 
+fun resetCounter() {
+    counter = 0
+    println("Counter reset")
+}
+
 val GetToKnow: State = state {
 
     onEntry {

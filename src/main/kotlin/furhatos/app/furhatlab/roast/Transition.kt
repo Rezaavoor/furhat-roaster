@@ -3,7 +3,6 @@ package furhatos.app.furhatlab.roast
 import furhatos.flow.kotlin.State
 import furhatos.flow.kotlin.furhat
 import furhatos.flow.kotlin.state
-import furhatos.gestures.Gestures
 
 val Transition: State = state {
     onEntry {

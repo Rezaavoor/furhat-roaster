@@ -26,9 +26,23 @@ object userInfo {
     }
 }
 
+fun resetUserInfo() {
+    userInfo.name = null
+    userInfo.age = null
+    userInfo.study = null
+    userInfo.job = null
+    userInfo.interests = null
+    userInfo.appearance = null
+
+    println("User info reset")
+}
+
 val InitRoast: State = state {
     onEntry {
         /** Set our default interaction parameters */
+        resetUserInfo()
+        resetRoastStateData()
+        resetCounter()
         users.setSimpleEngagementPolicy(distance = 1.5, maxUsers = 1)
         // furhat.character = "Marty"
         // furhat.voice = ""
