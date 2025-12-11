@@ -194,7 +194,19 @@ fun FlowControlRunner.SayWithExpression(input: String) {
 }
 
 fun FlowControlRunner.AskWithExpression(input: String) {
-    for(part in splitGesturesAndText(input)){
+    val parts = splitGesturesAndText(input).toList()
+    var lastTextPartIndex = -1
+    
+    // Find the index of the last text part (non-gesture)
+    for (i in parts.lastIndex downTo 0) {
+        if (!parts[i].matches(gestureRegex)) {
+            lastTextPartIndex = i
+            break
+        }
+    }
+    
+    for(i in parts.indices) {
+        val part = parts[i]
         println(part)
         if (part.matches(gestureRegex)) {
             val gestureName = part.removeSurrounding("[", "]")
@@ -204,7 +216,11 @@ fun FlowControlRunner.AskWithExpression(input: String) {
             }
         }
         else {
-            furhat.ask(part)
+            if (i == lastTextPartIndex) {
+                furhat.ask(part)
+            } else {
+                furhat.say(part)
+            }
         }
     }
 }
