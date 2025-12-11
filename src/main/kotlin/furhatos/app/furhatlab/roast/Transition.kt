@@ -7,7 +7,7 @@ import furhatos.gestures.Gestures
 
 val Transition: State = state {
     onEntry {
-        furhat.say("Okay, I like playing Fortnight and hanging out with my Alpha squad.")
+        furhat.say("Okay, I like collecting vinyls. I haven't gotten a turntable yet though.")
         delay(400)
         furhat.say("Where do you see yourself in 10 years?")
         delay(4000)
