@@ -201,6 +201,7 @@ val ReactToRoast: State = state {
             • NEVER use emojis or symbols.
             • NEVER add meta-commentary outside brackets.
             • Keep it short (1 sentence max).
+            • Include at least two punctuation marks such as commas or full stops within the sentence.
             
             TASK: React emotionally at the current hurt level with expressions in brackets.
         """.trimIndent()
