@@ -7,6 +7,10 @@ import furhatos.flow.kotlin.Furhat
 fun saveDialogHistory() {
     val messages = mutableListOf<String>()
     val fileName = userInfo.name + "_" + System.currentTimeMillis() + ".txt"
+    val directory = java.io.File("saved_roasts/dialog_history")
+    if (!directory.exists()) {
+        directory.mkdirs()
+    }
     Furhat.dialogHistory.all.forEach {
         when (it) {
             is DialogHistory.ResponseItem -> {
@@ -17,8 +21,8 @@ fun saveDialogHistory() {
             }
         }
     }
-    // Persist the captured dialog to a text file named with the generated fileName
-    java.io.File("saved_roasts/dialog_history/" + fileName).printWriter().use { writer ->
+    
+    java.io.File(directory, fileName).printWriter().use { writer ->
         messages.forEach { message ->
             writer.println(message)
         }

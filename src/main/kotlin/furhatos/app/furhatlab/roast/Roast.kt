@@ -1,6 +1,7 @@
 package furhatos.app.furhatlab.roast
 
 import furhatos.app.furhatlab.llm.ResponseGenerator
+import furhatos.app.furhatlab.roast.utils.saveDialogHistory
 import furhatos.flow.kotlin.*
 val custom = CustomGestures()
 
