@@ -39,9 +39,9 @@ val GetToKnow: State = state {
             return@onEntry
         }
 
-        furhat.say(ownAnswer[counter])
+        SayWithExpression(ownAnswer[counter])
         delay(400)
-        furhat.ask(userPrompts[counter])
+        AskWithExpression(userPrompts[counter])
     }
 
     onResponse {
