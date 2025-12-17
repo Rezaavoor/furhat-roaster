@@ -10,7 +10,7 @@ import furhatos.flow.kotlin.state
 import furhatos.flow.kotlin.users
 
 val userPrompts = listOf(
-    "My name is Brozart. What is your name?",
+    "Hi! My name is Brozart. What is your name?",
     "How old are you?",
     "What are you studying?",
     "What is your job?",
