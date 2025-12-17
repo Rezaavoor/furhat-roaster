@@ -119,7 +119,7 @@ val GetToKnow: State = state {
 
         if (userInfo.appearance == null) {
             println("Trying to get user appearance again")
-            getUserAppearance(this, users.current)
+            //getUserAppearance(this, users.current)
             println("User appearance successfully got: ${userInfo.appearance}")
         }
 
