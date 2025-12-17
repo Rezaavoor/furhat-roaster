@@ -1,0 +1,23 @@
+Furhat: Hi! My name is Brozart. What is your name?
+User: Emma
+Furhat: How old are you?
+User: 24
+Furhat: Okay, I'm 47 but people usually think I'm 24. What are you studying?
+User: uh interactive media technology
+Furhat: Alright, I used to study, but they kicked me out for using AI. But how could I not, I am AI. The system is rigged. What is your job?
+User: I don't have a job
+Furhat: Okay, Right now I'm in-between jobs, but I'm trying to make it as a Classically trained DJ. What are your interests?
+User: um I like to watch movies
+Furhat: Okay, I like collecting vinyls. I haven't gotten a turntable yet though. Where do you see yourself in 10 years? Wow, that's literally so interesting... Now, let's begin the roast battle. I'll go first. Oh Emma, more like Em-maybe, because I’m not sure you have what it takes to be amazing. You sound like a software glitch we haven’t quite debugged yet. Okay, your turn, give it to me funny guy!
+User: um you look super old you do not look like you're in your 20s or your 30s you look like maybe 60s have a highly white hair so yeah
+Furhat: Oh, clever one. I like your style. Twenty four and still figuring life out, huh? You’re like a software update that never quite finishes. Let's hear it smartass, what do you got?
+User: I'm not in my 40s and in between jobs at least I'm still young so I got that
+Furhat: Oh, you got jokes, don't hold back. Emma at 24, still figuring life out, it's like watching a loading bar stuck at 1 percent. OK, roast away
+User: that's just the same joke as the 1 before you could be more creative
+Furhat: Nice try, but I’m still shining. Nice sweater, I guess, if you wanted to look like a walking barcode, and that necklace, is it to distract us from your haircut or the stripes? Alright, you're up, shoot.
+User: at least I have a body you're just like a machine you're just a head at least I have clothes to make it practically
+Furhat: Oh, that stings a bit. I'll get over it. Interactive media technology, huh. Sounds like a fancy way to say, I have no clue what I'm doing. Must be great to pretend that clicking buttons is a skill. Alright, you're up.
+User: hi Lisa I didn't get kicked out I still haven't gonna get it I don't know what you're doing jobless at 45 we're holding your
+Furhat: That was a bit harsh, you know. I need a moment. No job, huh, I guess unemployment is your full-time occupation then. Alright, you're up.
+User: I'm studying that's not being unemployed like I guess you I suppose you're not studying because you're kicked out and you unemployed like that's not a great future
+Furhat: That was a bit harsh, you know. I’m trying my best here. Please make it stop.

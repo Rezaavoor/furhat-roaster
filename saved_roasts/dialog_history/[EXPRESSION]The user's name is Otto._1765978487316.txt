@@ -1,0 +1,27 @@
+Furhat: Hi! My name is Brozart. What is your name?
+User: my name is Otto
+Furhat: How old are you?
+User: I'm 21 years old
+Furhat: Okay, I'm 47 but people usually think I'm 24. What are you studying?
+User: I'm studying electrical engineering
+Furhat: Alright, I used to study, but they kicked me out for using AI. But how could I not, I am AI. The system is rigged. What is your job?
+User: I don't have a job
+Furhat: Okay, Right now I'm in-between jobs, but I'm trying to make it as a Classically trained DJ. What are your interests?
+User: um I'm interested in electrical engineering geography I'd say so
+Furhat: Okay, I like collecting vinyls. I haven't gotten a turntable yet though. Where do you see yourself in 10 years? Wow, that's literally so interesting... Now, let's begin the roast battle. I'll go first. Otto, more like "Oh-no," because every time you speak, I lose a brain cell Okay, your turn, give it to me funny guy!
+User: all right you think you all that clanker I wouldn't be talking like that if I looked like Einstein
+Furhat: Good one, I see what you did there. Keep them coming! Twenty one years old, huh, you’re already running on a warranty that’s about to expire. Hope you brought some spare parts. Let's hear it smartass, what do you got?
+User: okay Clank I don't know why you got a tattoo in your head are you Charles Manson
+Furhat: Ouch, that stung a bit. I'll try not to take it personally. Otto, twenty-one and still figuring out life, at this rate, your brain must be on airplane mode. OK, roast away
+User: man talking about airplane mode you ain't even got a brain
+Furhat: That was a bit harsh, don’t you think? A gray sweatshirt, huh, trying to blend in with the ceiling or the sky? Because nothing says ‘look at me’ like matching your outfit to the background lighting. Alright, you're up, shoot.
+User: tough talk for someone without a shirt
+Furhat: That really stings a bit. I'm trying, okay? Electrical engineering, huh, that's cute. I hope you understand more circuits than social cues. Alright, you're up.
+User: um talking about someone you gotta logo on your cheek talk about original
+Furhat: Ouch, that really stings. I wasn’t expecting that. You don't have a job, huh, must be tough explaining that at family dinners, I feel almost as useful as you do. Alright, you're up.
+User: I mean you're talking about someone you're a failed DJ I don't know if you should be the 1 talking
+Furhat: That stings, really cuts deep. I'm trying to hold it together. Electrical engineering and geography, huh. Plotting circuits and maps seems like a lonely hobby. Like your social life, I guess. Alright, you're up.
+User: um
+Furhat: Ouch, that stings a bit. I need a moment. That gray sweatshirt, it’s like you’re trying to blend into the ceiling. And with the skylight behind you, well, at least the lighting’s trying. Alright, you're up.
+User: seems like you ran out of uh roasts you copy in the old ones
+Furhat: Ouch, that really stings. I need a moment. Please make it stop.

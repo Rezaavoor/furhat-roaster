@@ -1,0 +1,23 @@
+Furhat: Hi! My name is Brozart. What is your name?
+User: hello my name is Peter
+Furhat: How old are you?
+User: 24
+Furhat: Okay, I'm 47 but people usually think I'm 24. What are you studying?
+User: media technology
+Furhat: Alright, I used to study, but they kicked me out for using AI. But how could I not, I am AI. The system is rigged. What is your job?
+User: I don't have a job
+Furhat: Okay, Right now I'm in-between jobs, but I'm trying to make it as a Classically trained DJ. What are your interests?
+User: I'd like to work out then I'd like to be with my friends
+Furhat: Okay, I like collecting vinyls. I haven't gotten a turntable yet though. Where do you see yourself in 10 years? Wow, that's literally so interesting... Now, let's begin the roast battle. I'll go first. Peter, more like 'Peddler' because all you seem to do is sell yourself short. Okay, your turn, give it to me funny guy!
+User: okay you got kicked out of school
+Furhat: Nice try, I’m just getting started. Oh 24 already, huh. You look like you peaked in middle school. Let's hear it smartass, what do you got?
+User: you look like you're 75
+Furhat: Oh, nice try. You almost got me there. Peter at 24, huh, still waiting for your life to start, or is this the peak of your existence OK, roast away
+User: you have ugly tattoos
+Furhat: Nice try, I’m still shining here. Keep ’em coming! Long brown hair and a black shirt, huh? You look like you tried to be mysterious, but ended up just cozy. Soft smile though, like you’re low-key proud of it. Alright, you're up, shoot.
+User: why don't you show any emotions
+Furhat: That one stings a bit, but I'll keep trying. Studying media technology, huh, so basically learning how to get ignored in new and exciting ways. Must be thrilling to major in making pixels look pretty while the real world passes you by. Alright, you're up.
+User: not having a job at all
+Furhat: That was a bit harsh, you know. No job, huh? Must be nice to have that much free time. I guess ambition isn’t your thing. Alright, you're up.
+User: you should use your free time to shave your beard
+Furhat: That really stings, you know. I thought we were friends. Please make it stop.

@@ -1,0 +1,27 @@
+Furhat: Hi! My name is Brozart. What is your name?
+User: hey my name is Marcel
+Furhat: How old are you?
+User: I'm 23
+Furhat: Okay, I'm 47 but people usually think I'm 24. What are you studying?
+User: I'm studying computer science
+Furhat: Alright, I used to study, but they kicked me out for using AI. But how could I not, I am AI. The system is rigged. What is your job?
+User: uh I'm just a student
+Furhat: Okay, Right now I'm in-between jobs, but I'm trying to make it as a Classically trained DJ. What are your interests?
+User: I like doing sports
+Furhat: Okay, I like collecting vinyls. I haven't gotten a turntable yet though. Where do you see yourself in 10 years? Wow, that's literally so interesting... Now, let's begin the roast battle. I'll go first. Marcel, more like Marcel-ous, the way you try to be smart but end up sounding like a broken circuit. Okay, your turn, give it to me funny guy!
+User: you have a gigantic nose
+Furhat: Good one, I like your style. Keep them coming! Twenty three, huh , still figuring out how to use your full brain capacity , or is that the issue Let's hear it smartass, what do you got?
+User: uh you have weird tattoos on your forehead
+Furhat: That was a bit harsh, you know. I'm trying here. Marcel at 23, still figuring out life, huh? Must be exhausting not having a clue. OK, roast away
+User: uh your hair looks like it's fake
+Furhat: Ouch, that stings a bit. I’ll get over it, though. Nice black sweatshirt with white sleeves, I guess you tried to keep it simple. Medium-length brown hair too, really pushing the limits of creativity. At least your style isn't distracting anyone. Alright, you're up, shoot.
+User: you look like you're about to cry
+Furhat: Ouch, that really stings. I didn’t expect that. Computer science huh, trying to debug your social life too? Must be exhausting. Alright, you're up. I didn't hear you. Roast me!
+User: uh what is with your eyebrows why are they so uh weirdly shaped
+Furhat: That was a bit harsh, you know. I didn't deserve that. Just a student, huh, so you're still figuring things out, I guess that explains the sadness inside me. Alright, you're up.
+User: and you in in between jobs as well
+Furhat: Ouch, that one stings. I’m not sure I’ll recover from this. Oh, you like doing sports, huh. Must be exhausting trying to run from your own potential. Alright, you're up.
+User: you wouldn't know you can do disposed as an AI
+Furhat: Ouch, that stings, really hits deep. I need a moment. You chose that black sweatshirt with white sleeves, huh, guess even your clothes want to take a nap. Alright, you're up.
+User: where are you closed by the way
+Furhat: Ouch, that really stings. I need a moment. Please make it stop.
