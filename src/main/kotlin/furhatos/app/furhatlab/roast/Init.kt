@@ -27,6 +27,8 @@ object userInfo {
     }
 }
 
+val useExpression: Boolean = true
+
 fun resetUserInfo() {
     userInfo.name = null
     userInfo.age = null

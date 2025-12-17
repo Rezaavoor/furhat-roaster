@@ -183,7 +183,7 @@ fun FlowControlRunner.SayWithExpression(input: String) {
         if (part.matches(gestureRegex)) {
             val gestureName = part.removeSurrounding("[", "]")
             val gesture = stringToGesture(gestureName)
-            if (gesture != null){
+            if (gesture != null && useExpression == true){
                 furhat.gesture(gesture)
             }
         }
@@ -211,7 +211,7 @@ fun FlowControlRunner.AskWithExpression(input: String) {
         if (part.matches(gestureRegex)) {
             val gestureName = part.removeSurrounding("[", "]")
             val gesture = stringToGesture(gestureName)
-            if (gesture != null){
+            if (gesture != null && useExpression == true){
                 furhat.gesture(gesture, async = true)
             }
         }
