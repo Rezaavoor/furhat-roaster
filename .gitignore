@@ -8,3 +8,4 @@ build/
 save_flow.xml
 *.iml
 /.env
+/bin
